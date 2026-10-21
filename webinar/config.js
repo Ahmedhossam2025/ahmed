@@ -1,11 +1,7 @@
-// Fill these in once, then re-upload. Everything is optional: leave a value empty and that feature simply hides.
+// Website settings. The Zoom link is NOT here on purpose (this file is public); it lives privately in the Apps Script and is emailed to registrants.
 window.WEBINAR_CFG = {
-  // Your Google Apps Script web-app URL (see apps-script/SETUP.md, step 3). Empty = form just redirects (preview mode).
+  // Your Google Apps Script web-app URL (see SETUP.md). Empty = the form just redirects (preview mode).
   APPS_SCRIPT_URL: "",
-  // WhatsApp number that receives the "confirm on WhatsApp" message (international format, digits only).
-  WA_NUMBER: "201006511606",
-  // Link to the WhatsApp group / community / channel for the webinar. Empty = the group card is hidden.
-  GROUP_URL: "",
-  // The live webinar link (YouTube Live / Zoom / Meet). Used in the calendar invite.
-  WEBINAR_URL: ""
+  // WhatsApp group invite for registrants.
+  GROUP_URL: "https://chat.whatsapp.com/G1noDQlRY0wKFZJZcdcc9L?mode=gi_t"
 };

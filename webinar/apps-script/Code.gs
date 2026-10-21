@@ -19,8 +19,8 @@ const CFG = {
   SUPPORT_WA: '201006511606',                     // support / booking number, digits only
 
   // ---- Fill these before launch ----
-  WEBINAR_URL: '',                                // live link (YouTube Live / Zoom / Meet). Reminders are paused until this is set.
-  GROUP_URL: '',                                  // WhatsApp group / community / channel invite link
+  WEBINAR_URL: 'https://us06web.zoom.us/j/83748929379?pwd=7FwzEjgEb4apaI7TLbXIE0c3lakoCc.1',   // Zoom meeting link (private: only emailed to registrants)
+  GROUP_URL: 'https://chat.whatsapp.com/G1noDQlRY0wKFZJZcdcc9L?mode=gi_t',   // WhatsApp group invite link
   RETREAT_URL: 'https://personal-power-retreat.vercel.app',
 
   // ---- Webinar time (Cairo, UTC+3 on Oct 25 2026) ----
@@ -80,8 +80,8 @@ const MSG = {
     en: { subject: "You're registered! Reclaim Your Power — October 25", lines: [
       'Hi {{NAME}},',
       "You're officially registered for *Reclaim Your Power*! We're excited to welcome you to this free live webinar.",
-      '*Date:* {{DATE}}\n*Time:* {{TIME}}\n*Where:* Online',
-      '*Your webinar joining link:* {{WEBINAR_URL}}',
+      '*Date:* {{DATE}}\n*Time:* {{TIME}}\n*Where:* Online, live on Zoom',
+      '*Your Zoom link:* {{WEBINAR_URL}}',
       'Before we meet, there is one more thing we would love you to do. *Join our webinar group* to receive reminders, important updates, and connect with other participants.',
       { btn: 'JOIN THE WEBINAR GROUP', url: '{{GROUP_URL}}' },
       'Here is a small question to reflect on before the webinar:',
@@ -90,8 +90,8 @@ const MSG = {
     ar: { subject: 'تم تسجيلك بنجاح في ويبينار استعد قوتك — ٢٥ أكتوبر', lines: [
       'أهلًا {{NAME}}،',
       'يسعدنا تأكيد تسجيلك في الويبينار المجاني *استعد قوتك*.',
-      '*الموعد:* {{DATE}}\n*الوقت:* {{TIME}}\n*المكان:* أونلاين',
-      '*رابط حضور الويبينار:* {{WEBINAR_URL}}',
+      '*الموعد:* {{DATE}}\n*الوقت:* {{TIME}}\n*المكان:* أونلاين عبر Zoom',
+      '*رابط Zoom للحضور:* {{WEBINAR_URL}}',
       'وقبل لقائنا، ندعوك إلى الانضمام لمجموعة الويبينار. من خلالها ستصلك التذكيرات وأهم التحديثات، وستتاح لك فرصة التواصل مع باقي المشاركين.',
       { btn: 'انضم إلى مجموعة الويبينار', url: '{{GROUP_URL}}' },
       'وقبل يوم اللقاء، فكّر في سؤال بسيط:',
@@ -101,26 +101,26 @@ const MSG = {
   reminder_1d: {
     en: { subject: 'Tomorrow: Reclaim Your Power!', lines: ['Hi {{NAME}},', "*Tomorrow: Reclaim Your Power!* We're meeting tomorrow, {{DATE}}, at *7:00 PM Cairo time*.",
       'Prepare a quiet space, something to write with, and an open mind. We are going to explore fear, identity, and the courage to begin again.',
-      { btn: 'JOIN LINK', url: '{{WEBINAR_URL}}' }] },
+      { btn: 'JOIN ON ZOOM', url: '{{WEBINAR_URL}}' }] },
     ar: { subject: 'غدًا موعدنا مع ويبينار استعد قوتك!', lines: ['أهلًا {{NAME}}،', '*غدًا موعدنا مع ويبينار استعد قوتك!* نلتقي غدًا {{DATE}}، الساعة *٧ مساءً بتوقيت القاهرة*.',
       'جهّز مكانًا هادئًا، وورقة وقلمًا، واستعد لساعة من التأمل والتعلّم. سنتحدث عن الخوف، والهوية، والشجاعة لبدء فصل جديد.',
-      { btn: 'رابط الحضور', url: '{{WEBINAR_URL}}' }] }
+      { btn: 'ادخل عبر Zoom', url: '{{WEBINAR_URL}}' }] }
   },
   reminder_3h: {
     en: { subject: "We're live in 3 hours!", lines: ['Hi {{NAME}},', '*We are live in 3 hours!* Reclaim Your Power starts today at *7:00 PM Cairo time*.',
-      'One question to bring with you: _What is one thing you feel ready to change?_', { btn: 'JOIN LINK', url: '{{WEBINAR_URL}}' }] },
+      'One question to bring with you: _What is one thing you feel ready to change?_', { btn: 'JOIN ON ZOOM', url: '{{WEBINAR_URL}}' }] },
     ar: { subject: 'باقي ٣ ساعات على ويبينار استعد قوتك!', lines: ['أهلًا {{NAME}}،', '*باقي ٣ ساعات على ويبينار استعد قوتك!* نبدأ اليوم الساعة *٧ مساءً بتوقيت القاهرة*.',
-      'سؤال صغير للتفكير قبل اللقاء: _ما الشيء الذي تشعر أن الوقت قد حان لتغييره؟_', { btn: 'رابط الحضور', url: '{{WEBINAR_URL}}' }] }
+      'سؤال صغير للتفكير قبل اللقاء: _ما الشيء الذي تشعر أن الوقت قد حان لتغييره؟_', { btn: 'ادخل عبر Zoom', url: '{{WEBINAR_URL}}' }] }
   },
   reminder_15m: {
     en: { subject: 'We start in 15 minutes!', lines: ['Hi {{NAME}},', '*We start in 15 minutes!* Your free Reclaim Your Power webinar is about to begin. Find a comfortable place and join us here:',
-      { btn: 'JOIN NOW', url: '{{WEBINAR_URL}}' }] },
+      { btn: 'JOIN ON ZOOM NOW', url: '{{WEBINAR_URL}}' }] },
     ar: { subject: 'باقي ١٥ دقيقة ونبدأ!', lines: ['أهلًا {{NAME}}،', '*باقي ١٥ دقيقة ونبدأ!* ويبينار *استعد قوتك* على وشك البدء. اختَر مكانًا مريحًا وانضم إلينا من هنا:',
-      { btn: 'انضم الآن', url: '{{WEBINAR_URL}}' }] }
+      { btn: 'ادخل عبر Zoom الآن', url: '{{WEBINAR_URL}}' }] }
   },
   live_now: {
-    en: { subject: "We're live now! Reclaim Your Power", lines: ['*We are live now!* Reclaim Your Power has started.', { btn: 'JOIN US HERE', url: '{{WEBINAR_URL}}' }] },
-    ar: { subject: 'بدأنا الآن! ويبينار استعد قوتك', lines: ['*بدأنا الآن!* ويبينار *استعد قوتك* بدأ بالفعل.', { btn: 'انضم إلينا من هنا', url: '{{WEBINAR_URL}}' }] }
+    en: { subject: "We're live now! Reclaim Your Power", lines: ['*We are live now!* Reclaim Your Power has started.', { btn: 'JOIN ON ZOOM', url: '{{WEBINAR_URL}}' }] },
+    ar: { subject: 'بدأنا الآن! ويبينار استعد قوتك', lines: ['*بدأنا الآن!* ويبينار *استعد قوتك* بدأ بالفعل.', { btn: 'ادخل عبر Zoom', url: '{{WEBINAR_URL}}' }] }
   },
   post_thanks: {
     en: { subject: "Your Personal Power journey doesn't end here", lines: ['Hi {{NAME}},', 'Thank you for joining *Reclaim Your Power*. Today we explored three important ideas:',
