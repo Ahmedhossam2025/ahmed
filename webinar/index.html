@@ -1,6 +1,6 @@
 <!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Reclaim Your Power — Free Live Webinar | Retrive</title><meta name="description" content="Join our FREE 60-minute live webinar to challenge the beliefs holding you back, reconnect with your authentic self, and take your first courageous step. Sunday, October 25, 2026, 7:00 PM Cairo time.">
-<meta property="og:title" content="Reclaim Your Power — Free Live Webinar | Retrive"><meta property="og:description" content="Join our FREE 60-minute live webinar to challenge the beliefs holding you back, reconnect with your authentic self, and take your first courageous step. Sunday, October 25, 2026, 7:00 PM Cairo time."><meta property="og:type" content="website"><meta property="og:image" content="assets/hero.jpg">
+<meta property="og:title" content="Reclaim Your Power — Free Live Webinar | Retrive"><meta property="og:description" content="Join our FREE 60-minute live webinar to challenge the beliefs holding you back, reconnect with your authentic self, and take your first courageous step. Sunday, October 25, 2026, 7:00 PM Cairo time."><meta property="og:type" content="website"><meta property="og:image" content="https://personal-power-retreat.vercel.app/webinar/assets/hero.jpg">
 <link rel="icon" href="assets/logo-teal.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Cairo:wght@400;600;700&family=Montserrat:wght@400;600&family=Poppins:wght@500;600&family=Rubik:wght@500&display=swap"><style>
 :root{--teal:#035E5E;--deep:#024848;--sage:#97B398;--sl:#D5E3D5;--frame:#F1F2F2;--ink:#1E2B2B;--muted:#5E6B6A;--line:#DCE1E0;--sun:#CF9C58;
 --fh:"Poppins","Cairo",system-ui,sans-serif;--fb:"Montserrat","Cairo",system-ui,sans-serif;--fl:"Rubik","Cairo",system-ui,sans-serif;--fx:"Caveat",cursive;
@@ -132,8 +132,8 @@ footer a{color:var(--teal);font-weight:600;text-decoration:none}
 (function(){
 var C=window.WEBINAR_CFG||{},f=document.getElementById('regForm'); if(!f) return;
 var lang=document.documentElement.lang, err=document.getElementById('err'), btn=document.getElementById('submitBtn');
-var M={en:{name:'Please enter your first name.',email:'Please enter a valid email address.',phone:'Please enter your WhatsApp number with country code, e.g. +20 100 000 0000.',consent:'Please tick the box so we can send your reminders.',fail:'Something went wrong. Please try again, or message us on WhatsApp.',wait:'Reserving your seat…'},
-ar:{name:'من فضلك اكتب اسمك الأول.',email:'من فضلك اكتب بريدًا إلكترونيًا صحيحًا.',phone:'من فضلك اكتب رقم الواتساب مع كود الدولة، مثال: ‎+20 100 000 0000',consent:'من فضلك وافق على استلام التذكيرات.',fail:'حدث خطأ. حاول مرة أخرى أو راسلنا على واتساب.',wait:'جارٍ حجز مكانك…'}}[lang];
+var M={en:{name:'Please enter your first name.',email:'Please enter a valid email address.',phone:'Please enter your WhatsApp number with country code, e.g. +20 100 000 0000.',consent:'Please tick the box so we can send your reminders.',fail:'Something went wrong. Please try again, or message us on WhatsApp.',closed:'Registration opens very soon. Please check back shortly.',wait:'Reserving your seat…'},
+ar:{name:'اكتب اسمك الأول لو سمحت.',email:'اكتب إيميل صحيح لو سمحت.',phone:'اكتب رقم الواتساب مع كود الدولة، مثال: ‎+20 100 000 0000',consent:'علّم على المربع عشان نبعتلك التذكيرات.',fail:'حصلت مشكلة. جرّب تاني أو كلمنا على واتساب.',closed:'التسجيل هيفتح قريب جدًا. ارجع بعد شوية.',wait:'بنحجز مكانك…'}}[lang];
 function show(m){err.textContent=m;err.style.display='block'}
 function ref(){var a='ABCDEFGHJKMNPQRSTUVWXYZ23456789',s='';for(var i=0;i<5;i++)s+=a[Math.floor(Math.random()*a.length)];return s}
 function norm(p){p=p.replace(/[^\d+]/g,'');if(p.indexOf('00')===0)p='+'+p.slice(2);if(/^01\d{9}$/.test(p))p='+2'+p;if(p[0]!=='+')p='+'+p;return p}
@@ -151,7 +151,7 @@ f.addEventListener('submit',function(e){
  btn.disabled=true; var old=btn.innerHTML; btn.textContent=M.wait;
  try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
  var go=function(){ location.href='thanks/?'+new URLSearchParams({n:payload.name,r:r}).toString(); };
- if(!C.APPS_SCRIPT_URL){ setTimeout(go,300); return; }
+ if(!C.APPS_SCRIPT_URL){ if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)||q.get('preview')==='1'){ setTimeout(go,300); return; } btn.disabled=false; btn.innerHTML=old; show(M.closed); return; }
  fetch(C.APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
   .then(function(){go()}).catch(function(){btn.disabled=false;btn.innerHTML=old;show(M.fail)});
 });
