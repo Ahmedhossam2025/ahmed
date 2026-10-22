@@ -39,7 +39,7 @@ h2{font-size:clamp(1.8rem,4.2vw,2.9rem)}
 .when{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.when span{border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:9px 16px;font:500 .78rem/1 var(--fl);letter-spacing:.06em;text-transform:uppercase}
 [dir=rtl] .when span{letter-spacing:0;font-size:.92rem}
 .form{background:#fff;color:var(--ink);border-radius:28px;padding:clamp(22px,3vw,34px);box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.form h3{font-size:1.5rem;margin-bottom:4px}.form .small{color:var(--muted);font-size:.92rem;margin-bottom:18px}
+.form h3{font-size:1.5rem;margin-bottom:16px}.form .small{color:var(--muted);font-size:.92rem;margin-bottom:18px}
 .f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.f label{font:600 .86rem/1.2 var(--fh)}
 .f input[type=text],.f input[type=email],.f input[type=tel]{font:inherit;padding:15px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--frame);color:var(--ink);width:100%}
 .f input:focus{outline:3px solid rgba(207,156,88,.5);border-color:var(--teal);background:#fff}
@@ -47,6 +47,15 @@ h2{font-size:clamp(1.8rem,4.2vw,2.9rem)}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:.82rem;color:var(--muted);line-height:1.5;margin:6px 0 18px}.consent input{margin-top:4px;accent-color:var(--teal);width:18px;height:18px;flex:none}
 .hp{position:absolute!important;left:-9999px;opacity:0;height:0;overflow:hidden}
 .err{color:#A33;font-size:.85rem;margin-top:10px;display:none}.fine{font-size:.8rem;color:var(--muted);margin-top:14px;line-height:1.5}
+.ico{width:1.1em;height:1.1em;flex:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--sun);color:#1E2B2B;font:600 .82rem/1 var(--fl);letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border-radius:99px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+[dir=rtl] .badge{letter-spacing:0;font-size:1rem}
+.when span{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5);text-transform:none;letter-spacing:0;font:600 .95rem/1 var(--fh);padding:11px 16px}
+.when .ico{color:var(--sun);width:1.25em;height:1.25em}.when b{font-weight:600}
+.rrr,.rrr2{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}.rrr span,.rrr2 span{display:inline-flex;align-items:center;gap:8px}
+.rrr .ico{color:var(--sun);width:.9em;height:.9em}.rrr2 .ico{width:.8em;height:.8em}
+.shift .ic{width:48px;height:48px;border-radius:14px;background:var(--sl);color:var(--teal);display:grid;place-items:center;margin-bottom:6px}.shift .ic .ico{width:26px;height:26px}
+.kgpc{display:flex;flex-wrap:wrap;gap:8px}.kgpc span{background:var(--sl);color:var(--teal);font:600 .82rem/1 var(--fl);letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;border-radius:99px}[dir=rtl] .kgpc span{letter-spacing:0;font-size:.95rem}
 /* content */
 .pain{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
 .pain ul,.chk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
@@ -95,8 +104,8 @@ footer a{color:var(--teal);font-weight:600;text-decoration:none}
 <div style="padding:clamp(32px,6vw,72px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
 <div class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
 <h1 style="font-size:clamp(2.4rem,6vw,4rem)" id="hello">تم تسجيلك!</h1><p class="hand" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sun)">البداية من هنا.</p>
-<p style="color:#DCEBEA">سجّلت في الويبينار المجاني</p><h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">استعد قوتك</h2><p style="color:#EAF3F2;max-width:46ch">٣ مفاتيح تتحرر بيها من الخوف، وترجع تتعرف على نفسك، وتبدأ فصل جديد في حياتك.</p>
-<div class="when" style="justify-content:center"><span>الأحد ٢٥ أكتوبر ٢٠٢٦</span><span>من ٧ لـ ٨ مساءً بتوقيت القاهرة · أونلاين على Zoom</span></div></div></div></div>
+<p style="color:#DCEBEA">سجّلت في الويبينار المجاني</p><h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">استعد قوتك</h2><p style="color:#EAF3F2;max-width:46ch">3 مفاتيح تتحرر بيها من الخوف، وترجع تتعرف على نفسك، وتبدأ فصل جديد في حياتك.</p>
+<div class="when" style="justify-content:center"><span>الأحد 25 أكتوبر 2026</span><span>من 7 لـ 8 مساءً بتوقيت القاهرة · أونلاين على Zoom</span></div></div></div></div>
 
 <section><div class="thanks">
 <div class="tbox"><div class="step done"><span class="n">✓</span><div><h3>مكانك اتحجز</h3><p style="color:var(--muted)">بنبعتلك التأكيد ورابط Zoom على إيميلك. لو ماوصلش خلال دقايق، بص في مجلد الرسائل غير المرغوبة (Spam).</p></div></div></div>
