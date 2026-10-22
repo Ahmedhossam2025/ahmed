@@ -66,6 +66,16 @@ h2{font-size:clamp(1.8rem,4.2vw,2.9rem)}
 @media(max-width:860px){.journey::before{top:40px;bottom:40px;left:36px;right:auto;border-top:0;border-left:3px dashed var(--sage)}.journey .shift{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start}.journey .node{margin:0}.journey .body{padding:22px}}
 [dir=rtl] .journey::before{left:16.6%;right:16.6%}@media(max-width:860px){[dir=rtl] .journey::before{left:auto;right:36px;border-left:0;border-right:3px dashed var(--sage)}}
 .kgpc{display:flex;flex-wrap:wrap;gap:8px}.kgpc span{background:var(--sl);color:var(--teal);font:600 .82rem/1 var(--fl);letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;border-radius:99px}[dir=rtl] .kgpc span{letter-spacing:0;font-size:.95rem}
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1040px;margin-inline:auto}
+.jcard{position:relative;background:#fff;border-radius:30px;padding:30px 28px 32px;display:flex;flex-direction:column;gap:12px}
+.jtop{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.jic{width:46px;height:46px;border-radius:14px;background:var(--teal);color:#fff;display:grid;place-items:center;flex:none}.jic .ico{width:24px;height:24px}
+.jword{font:600 1.05rem/1 var(--fh);color:var(--teal);letter-spacing:.04em;text-transform:uppercase}[dir=rtl] .jword{letter-spacing:0;font-size:1.15rem}
+.jnum{margin-inline-start:auto;font:600 1.6rem/1 var(--fl);color:var(--sun)}
+.jcard h3{font-size:1.3rem}.jcard p{color:var(--muted);font-size:.98rem}
+.jcard:not(:last-child)::after{content:"";position:absolute;top:50%;inset-inline-end:-27px;width:14px;height:14px;border-top:3px solid var(--sage);border-right:3px solid var(--sage);transform:translateY(-50%) rotate(45deg)}
+[dir=rtl] .jcard:not(:last-child)::after{transform:translateY(-50%) rotate(-135deg)}
+@media(max-width:860px){.jgrid{grid-template-columns:1fr;gap:34px}.jcard:not(:last-child)::after,[dir=rtl] .jcard:not(:last-child)::after{top:auto;bottom:-25px;inset-inline-end:auto;left:50%;transform:translateX(-50%) rotate(135deg)}}
 /* content */
 .pain{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
 .pain ul,.chk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
@@ -113,15 +123,15 @@ footer a{color:var(--teal);font-weight:600;text-decoration:none}
 <div class="wrap"><div class="card teal"><img class="bgimg" src="../../assets/hero.jpg" alt=""><div class="tint"></div><img class="rays" src="../../assets/rays.svg" alt="">
 <div style="padding:clamp(32px,6vw,72px);display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
 <div class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-<h1 style="font-size:clamp(2.4rem,6vw,4rem)" id="hello">تم تسجيلك!</h1><p class="hand" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sun)">البداية من هنا.</p>
-<p style="color:#DCEBEA">سجّلت في الويبينار المجاني</p><h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">استعد قوتك</h2><p style="color:#EAF3F2;max-width:46ch">3 مفاتيح تتحرر بيها من الخوف، وترجع تتعرف على نفسك، وتبدأ فصل جديد في حياتك.</p>
+<h1 style="font-size:clamp(2.4rem,6vw,4rem)" id="hello">تم تسجيلك!</h1><p class="hand" style="font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sun)">رحلتك مع قوتك الشخصية بتبدأ من هنا.</p>
+<p style="color:#DCEBEA">سجّلت في الويبينار المجاني</p><h2 style="font-size:clamp(1.8rem,4vw,2.8rem)">استعد قوتك</h2><p style="color:#EAF3F2;max-width:46ch">3 تحوّلات تساعدك تسيب الخوف ورا، وترجع لنفسك، وتبدأ صفحة جديدة.</p>
 <div class="when" style="justify-content:center"><span>الأحد 25 أكتوبر 2026</span><span>من 7 لـ 8 مساءً بتوقيت القاهرة · أونلاين على Zoom</span></div></div></div></div>
 
 <section><div class="thanks">
-<div class="tbox"><div class="step done"><span class="n">✓</span><div><h3>مكانك اتحجز</h3><p style="color:var(--muted)">بنبعتلك التأكيد ورابط Zoom على إيميلك. لو ماوصلش خلال دقايق، بص في مجلد الرسائل غير المرغوبة (Spam).</p></div></div></div>
-<div class="tbox"><div class="step"><span class="n">1</span><div><h3>انضم لجروب الويبينار</h3><p style="color:var(--muted)">هنشارك رابط Zoom والتذكيرات والتحديثات جوه الجروب. هتلاقي فيه:</p><ul><li>أهم التحديثات عن الويبينار.</li><li>تذكيرات لطيفة قبل ما نبدأ.</li><li>رابط الدخول على Zoom.</li><li>فرصة تتعرف على باقي المشاركين.</li><li>أسئلة بتفتح التفكير وتحضّرك للقاء.</li></ul><div style="margin-top:16px"><a class="btn" id="grpBtn" href="#" target="_blank" rel="noopener">انضم لجروب الويبينار <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div></div>
+<div class="tbox"><div class="step done"><span class="n">✓</span><div><h3>مكانك اتحجز</h3><p style="color:var(--muted)">التأكيد ورابط Zoom في طريقهم لإيميلك. لو ماوصلوش خلال دقايق، بص في الـ Spam.</p></div></div></div>
+<div class="tbox"><div class="step"><span class="n">1</span><div><h3>انضم لجروب الويبينار</h3><p style="color:var(--muted)">الجروب هو مكاننا قبل اللقاء: فيه رابط Zoom والتذكيرات وأي جديد. وهتلاقي فيه كمان:</p><ul><li>كل جديد عن الويبينار.</li><li>تذكير هادي قبل ما نبدأ.</li><li>رابط الدخول على Zoom.</li><li>ناس زيك، تتعرف عليهم.</li><li>أسئلة صغيرة تحضّرك للقاء.</li></ul><div style="margin-top:16px"><a class="btn" id="grpBtn" href="#" target="_blank" rel="noopener">انضم لجروب الويبينار <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div></div></div>
 <div class="tbox"><div class="step"><span class="n">2</span><div><h3>ضيفه على تقويمك</h3><div class="row" style="margin-top:12px"><a class="btn line" id="gcal" href="#" target="_blank" rel="noopener">Google Calendar</a><a class="btn line" id="ics" href="#">Apple / Outlook (‎.ics)</a></div></div></div></div>
-<div class="quote"><span class="hand">قبل ما نتقابل…</span><p>خد لحظة وفكّر في السؤال ده:</p><p style="font:600 1.25rem/1.45 var(--fh);margin:10px 0">"إيه الخوف أو المعتقد اللي مش عايزه يتحكم في قراراتي بعد كده؟"</p><p style="color:#DCEBEA">احتفظ بإجابتك لنفسك، وهنرجع لها وقت الويبينار.</p><p style="margin-top:14px;font:600 1.1rem var(--fh)">نتقابل يوم الأحد!</p></div>
+<div class="quote"><span class="hand">قبل ما نتقابل…</span><p>خد نفس، وفكّر في السؤال ده:</p><p style="font:600 1.25rem/1.45 var(--fh);margin:10px 0">"إيه الخوف أو المعتقد اللي مش عايزه يتحكم في قراراتي بعد كده؟"</p><p style="color:#DCEBEA">خلّي إجابتك معاك. هنرجع لها مع بعض في الويبينار.</p><p style="margin-top:14px;font:600 1.1rem var(--fh)">نتقابل يوم الأحد!</p></div>
 </div></section>
 <footer><div class="wrap"><img src="../../assets/logo-teal.svg" alt="Retrive"><span>Retrive, Wellbeing Experience Architects</span></div></footer>
 </div>
