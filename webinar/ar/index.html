@@ -180,9 +180,9 @@ f.addEventListener('submit',function(e){
  btn.disabled=true; var old=btn.innerHTML; btn.textContent=M.wait;
  if(!C.REGISTER_URL){ btn.disabled=false; btn.innerHTML=old; show(M.closed); return; }
  fetch(C.REGISTER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-  .then(function(response){return response.json().then(function(data){if(!response.ok||!data.ok||!data.ref) throw new Error(data.error||M.fail); return data;})})
+  .then(function(response){return response.json().then(function(data){if(!response.ok||!data.ok||!data.ref){var e=new Error('server');e.srv=String(data.error||'');throw e;} return data;})})
   .then(function(data){try{if(window.fbq) fbq('track','Lead')}catch(_){} location.href='thanks/?'+new URLSearchParams({n:payload.name,r:data.ref}).toString()})
-  .catch(function(){btn.disabled=false;btn.innerHTML=old;show(M.fail)});
+  .catch(function(e){btn.disabled=false;btn.innerHTML=old;var m=(e&&e.srv)||'';show(/phone/i.test(m)?M.phone:/email/i.test(m)?M.email:/name/i.test(m)?M.name:/consent/i.test(m)?M.consent:m?M.fail+' ('+m+')':M.fail)});
 });
 })();
 </script></body></html>
