@@ -54,7 +54,17 @@ h2{font-size:clamp(1.8rem,4.2vw,2.9rem)}
 .when .ico{color:var(--sun);width:1.25em;height:1.25em}.when b{font-weight:600}
 .rrr,.rrr2{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}.rrr span,.rrr2 span{display:inline-flex;align-items:center;gap:8px}
 .rrr .ico{color:var(--sun);width:.9em;height:.9em}.rrr2 .ico{width:.8em;height:.8em}
-.shift .ic{width:48px;height:48px;border-radius:14px;background:var(--sl);color:var(--teal);display:grid;place-items:center;margin-bottom:6px}.shift .ic .ico{width:26px;height:26px}
+.journey{position:relative;gap:clamp(14px,2.5vw,28px)}
+.journey::before{content:"";position:absolute;top:36px;left:16.6%;right:16.6%;border-top:3px dashed var(--sage);z-index:0}
+.journey .shift{background:none;padding:0;gap:0;position:relative;z-index:1}
+.journey .node{position:relative;width:72px;height:72px;margin:0 auto 18px;display:grid;place-items:center}
+.journey .ic{width:72px;height:72px;border-radius:50%;background:#fff;color:var(--teal);box-shadow:0 0 0 6px var(--frame),0 10px 24px rgba(3,94,94,.14);display:grid;place-items:center;margin:0}.journey .ic .ico{width:30px;height:30px}
+.journey .shift:last-child .ic{background:var(--teal);color:#fff}
+.journey .num{position:absolute;top:-6px;inset-inline-end:-10px;background:var(--sun);color:#1E2B2B;font:600 .74rem/1 var(--fl);padding:6px 8px;border-radius:99px;box-shadow:0 0 0 3px var(--frame)}
+.journey .body{background:#fff;border-radius:30px;padding:28px;display:flex;flex-direction:column;gap:10px;height:100%}
+.journey .shift i{color:var(--sun)}
+@media(max-width:860px){.journey::before{top:40px;bottom:40px;left:36px;right:auto;border-top:0;border-left:3px dashed var(--sage)}.journey .shift{display:grid;grid-template-columns:72px 1fr;gap:16px;align-items:start}.journey .node{margin:0}.journey .body{padding:22px}}
+[dir=rtl] .journey::before{left:16.6%;right:16.6%}@media(max-width:860px){[dir=rtl] .journey::before{left:auto;right:36px;border-left:0;border-right:3px dashed var(--sage)}}
 .kgpc{display:flex;flex-wrap:wrap;gap:8px}.kgpc span{background:var(--sl);color:var(--teal);font:600 .82rem/1 var(--fl);letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;border-radius:99px}[dir=rtl] .kgpc span{letter-spacing:0;font-size:.95rem}
 /* content */
 .pain{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
