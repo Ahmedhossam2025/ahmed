@@ -149,11 +149,11 @@ f.addEventListener('submit',function(e){
  var payload={ref:r,name:d.name.trim(),email:d.email.trim().toLowerCase(),phone:ph,lang:lang,consent:true,
   source:q.get('utm_source')||'',medium:q.get('utm_medium')||'',campaign:q.get('utm_campaign')||'',content:q.get('utm_content')||'',page:location.pathname};
  btn.disabled=true; var old=btn.innerHTML; btn.textContent=M.wait;
- try{ if(window.fbq) fbq('track','Lead'); }catch(_){}
- var go=function(){ location.href='thanks/?'+new URLSearchParams({n:payload.name,r:r}).toString(); };
- if(!C.APPS_SCRIPT_URL){ if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)||q.get('preview')==='1'){ setTimeout(go,300); return; } btn.disabled=false; btn.innerHTML=old; show(M.closed); return; }
- fetch(C.APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
-  .then(function(){go()}).catch(function(){btn.disabled=false;btn.innerHTML=old;show(M.fail)});
+ if(!C.REGISTER_URL){ btn.disabled=false; btn.innerHTML=old; show(M.closed); return; }
+ fetch(C.REGISTER_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+  .then(function(response){return response.json().then(function(data){if(!response.ok||!data.ok||!data.ref) throw new Error(data.error||M.fail); return data;})})
+  .then(function(data){try{if(window.fbq) fbq('track','Lead')}catch(_){} location.href='thanks/?'+new URLSearchParams({n:payload.name,r:data.ref}).toString()})
+  .catch(function(){btn.disabled=false;btn.innerHTML=old;show(M.fail)});
 });
 })();
 </script></body></html>
